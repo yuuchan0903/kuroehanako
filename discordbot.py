@@ -25,6 +25,12 @@ anync def reply(message):
 async def on_message(message):
     if client.user in message.mentions: # 話しかけられたかの判定
         await reply(message) # 返信する非同期関数を実行
+        
+# 発言時に実行されるイベントハンドラを定義
+@client.event
+async def on_message(message):
+    # コマンドに対応するデータを取得して表示
+    print(get_data(message))
 
 
 bot.run(token)
