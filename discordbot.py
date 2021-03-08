@@ -14,7 +14,7 @@ async def on_command_error(ctx, error):
 
 
 @bot.command()
-async def 'OK?ロゼッタ'(ctx):
+async def 'ロゼッタ'(ctx):
     await ctx.send('ぽーーん')
 
 
