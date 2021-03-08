@@ -12,10 +12,6 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
     
-@client.event
-async def on_ready():
-    # 起動したらターミナルにログイン通知が表示される
-    print('ログインしました')
 
 # メッセージ受信時に動作する処理
 @client.event
@@ -38,13 +34,5 @@ async def on_message(message):
     if client.user in message.mentions: # 話しかけられたかの判定
         await reply(message) # 返信する非同期関数を実行        
         
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
-
-@bot.command()
-async def neko(ctx):
-    await ctx.send('にゃーん')
-    
     
 bot.run(token)
